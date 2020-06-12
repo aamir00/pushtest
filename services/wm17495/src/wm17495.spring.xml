@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+    <bean class="com.wavemaker.runtime.rest.model.RestServiceInfoBean" id="wm17495ServiceInfo">
+        <property name="serviceName" value="wm17495"/>
+        <property name="restRuntimeConfig" ref="appDefaultRestRuntimeConfig"/>
+        <property name="entryList">
+            <list>
+                <bean class="com.wavemaker.runtime.rest.model.RestServiceInfoBeanEntry">
+                    <property name="url" value="/wm17495/test00_master/services/hrdb/Department"/>
+                    <property name="httpMethod" value="GET"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                        classpath:wm17495.properties
+                    </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="searchSystemEnvironment" value="true"/>
+    </bean>
+</beans>

@@ -1,0 +1,47 @@
+{
+  "EmployeeItem" : {
+    "_id" : "wm-EmployeeItem-wm.Variable-1591163255335",
+    "name" : "EmployeeItem",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataBinding",
+      "value" : "bind:pageParams.item"
+    } ],
+    "dataSet" : {
+      "tenantId" : "",
+      "state" : "",
+      "department" : {
+        "location" : "",
+        "deptId" : "",
+        "name" : "",
+        "tenantId" : "",
+        "budget" : "",
+        "deptCode" : "",
+        "q4" : "",
+        "q3" : "",
+        "q2" : "",
+        "q1" : ""
+      },
+      "username" : "",
+      "picurl" : "",
+      "employeeByManagerId" : { },
+      "password" : "",
+      "street" : "",
+      "deptId" : "",
+      "managerId" : "",
+      "lastname" : "",
+      "zip" : "",
+      "empId" : "",
+      "firstname" : "",
+      "birthdate" : "",
+      "role" : "",
+      "city" : "",
+      "jobTitle" : ""
+    },
+    "type" : "com.customer_issues.hrdb.Employee",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

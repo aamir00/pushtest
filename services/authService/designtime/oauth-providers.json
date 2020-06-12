@@ -1,0 +1,85 @@
+[ {
+  "providerId" : "swagger_petstore_auth",
+  "authorizationUrl" : "https://petstore.swagger.io/oauth/authorize",
+  "accessTokenUrl" : "",
+  "clientId" : "",
+  "clientSecret" : "",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "read:pets",
+    "value" : "read your pets"
+  }, {
+    "name" : "write:pets",
+    "value" : "modify pets in your account"
+  } ]
+}, {
+  "providerId" : "swagger2_petstore_auth",
+  "authorizationUrl" : "https://petstore.swagger.io/oauth/authorize",
+  "accessTokenUrl" : "",
+  "clientId" : "",
+  "clientSecret" : "",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "read:pets",
+    "value" : "read your pets"
+  }, {
+    "name" : "write:pets",
+    "value" : "modify pets in your account"
+  } ]
+}, {
+  "providerId" : "petstore_petstore_auth",
+  "authorizationUrl" : "https://petstore.swagger.io/oauth/authorize",
+  "accessTokenUrl" : "",
+  "clientId" : "",
+  "clientSecret" : "",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "read:pets",
+    "value" : "read your pets"
+  }, {
+    "name" : "write:pets",
+    "value" : "modify pets in your account"
+  } ]
+}, {
+  "providerId" : "herokuapp_google",
+  "authorizationUrl" : "https://accounts.google.com/o/oauth2/v2/auth",
+  "accessTokenUrl" : "https://oauth2.googleapis.com/token",
+  "clientId" : "125057155879-p1ta09ks18r4pbp75qhinkmj8vl7vhap.apps.googleusercontent.com",
+  "clientSecret" : "WKiLxYLoSXliwdcMCnCfDMYv",
+  "sendAccessTokenAs" : "HEADER",
+  "accessTokenParamName" : "Bearer",
+  "scopes" : [ {
+    "name" : "openid",
+    "value" : "openid"
+  }, {
+    "name" : "opendi",
+    "value" : "openid"
+  } ]
+}, {
+  "providerId" : "herokuapp2_google",
+  "authorizationUrl" : "https://accounts.google.com/o/oauth2/v2/auth",
+  "accessTokenUrl" : "https://oauth2.googleapis.com/token",
+  "clientId" : "",
+  "clientSecret" : "",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "openid",
+    "value" : "openid"
+  } ]
+}, {
+  "providerId" : "herokuapp_google",
+  "authorizationUrl" : "https://accounts.google.com/o/oauth2/v2/auth",
+  "accessTokenUrl" : "https://oauth2.googleapis.com/token",
+  "clientId" : "",
+  "clientSecret" : "",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "openid",
+    "value" : "openid"
+  } ]
+} ]

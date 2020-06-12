@@ -1,0 +1,26 @@
+{
+  "HerokuappTodocontroller" : {
+    "_id" : "wm-HerokuappTodocontroller-wm.CrudVariable-1591702868674",
+    "name" : "HerokuappTodocontroller",
+    "owner" : "Page",
+    "category" : "wm.CrudVariable",
+    "type" : "com.customer_issues.herokuapp.Todo",
+    "service" : "herokuapp",
+    "operation" : "todo-controller",
+    "operationId" : "todo-controller",
+    "crudOperationId" : "herokuapp.todo-controller",
+    "operationType" : "list",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : false,
+    "controller" : "todo-controller",
+    "dataBinding" : { }
+  }
+}

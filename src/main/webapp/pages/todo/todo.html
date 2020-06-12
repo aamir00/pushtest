@@ -1,0 +1,38 @@
+<wm-page pagetitle="Todo" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-table gridfirstrowselect="true" editmode="dialog" name="todo_controllerTable2" title="todo-controller List" dataset="bind:Variables.HerokuappTodocontroller.dataSet" navigation="None">
+                <wm-table-column binding="todoDescription" caption="Todo Description" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-column binding="todoId" caption="Todo Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                <wm-table-column binding="todoTitle" caption="Todo Title" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+            </wm-table>
+            <wm-form errormessage="" title="todo-controller Info" formlayout="dialog" iconclass="wi wi-edit" method="post" dataset="bind:Variables.HerokuappTodocontroller.dataSet" captionalign="left" captionposition="top" name="todo_controllerForm1" dependson="todo_controllerTable2">
+                <wm-layoutgrid columns="3" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                            <wm-form-field readonly="false" name="todoDescription" displayname="Todo Description" key="todoDescription" type="string" show="true" widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                            <wm-form-field readonly="false" name="todoId" displayname="Todo Id" key="todoId" type="integer" show="true" widget="number" textalign="right"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                            <wm-form-field readonly="false" name="todoTitle" displayname="Todo Title" key="todoTitle" type="string" show="true" widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-form-action key="reset" class="form-reset btn-secondary" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-layoutgrid>
+            </wm-form>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

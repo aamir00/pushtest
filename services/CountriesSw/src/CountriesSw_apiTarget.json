@@ -1,0 +1,3180 @@
+{
+  "basePath" : "${CountriesSw.basepath}",
+  "paths" : {
+    "/Countries1/Countries" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_createCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "create",
+        "description" : "Creates a new Countries instance.",
+        "operationId" : "CountriesSw_CountriesController_createCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Countries"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Countries"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "5a2f7132-d99a-4acb-a922-7bcc64ed09b6",
+          "in" : "body",
+          "name" : "Countries",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Countries",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "countries"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_findCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "list",
+        "description" : "Returns the paginated list of Countries instances matching the optional query (q) request param. If there is no query provided, it returns all the instances. Pagination & Sorting parameters such as page& size, sort can be sent as request parameters. The sort value should be a comma separated list of field names & optional sort order to sort the data on. eg: field1 asc, field2 desc etc ",
+        "operationId" : "CountriesSw_CountriesController_findCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Countries"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "7234e17e-fb25-4b8a-82c7-f8187419b5c2",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries"
+    },
+    "/Countries1/Cities/{id}" : {
+      "patch" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_patchCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Partially updates the Cities instance associated with the given id.",
+        "operationId" : "CountriesSw_CitiesController_patchCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Cities"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "5712be7e-17b2-4301-8b0b-5c76c093d635",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Cities"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "5ea5cc1f-2465-4509-9339-e5d34c15cab7",
+          "in" : "body",
+          "name" : "Cities",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Cities",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "citiesPatch"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/{id}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_getCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the Cities instance associated with the given id.",
+        "operationId" : "CountriesSw_CitiesController_getCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Cities"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "3bbd4283-476a-4a16-8a40-686e1cb6c8f1",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/{id}",
+      "delete" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_deleteCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "delete",
+        "description" : "Deletes the Cities instance associated with the given id.",
+        "operationId" : "CountriesSw_CitiesController_deleteCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "boolean"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "e17498af-4f0b-4fee-948a-ec537d8a5f34",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "put" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_editCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "update",
+        "description" : "Updates the Cities instance associated with the given id.",
+        "operationId" : "CountriesSw_CitiesController_editCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Cities"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "d3627ddf-10fb-4319-a647-452c556271a0",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Cities"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "f4f4ac93-7010-4423-9ff4-304dba1c744e",
+          "in" : "body",
+          "name" : "Cities",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Cities",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "cities"
+        } ],
+        "tags" : [ "CitiesController" ]
+      }
+    },
+    "/Countries1/States/export/{exportType}" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_exportStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_StatesController_exportStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "5a2377b4-8a77-4421-bdb0-b4e2aad0979b",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "831ae720-88ac-4cef-aaf7-03bb99306f3e",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/export/{exportType}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_exportStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_StatesController_exportStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "5a2377b4-8a77-4421-bdb0-b4e2aad0979b",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "831ae720-88ac-4cef-aaf7-03bb99306f3e",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/export/{exportType}"
+    },
+    "/Countries1/States/filter" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_filterStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the paginated list of States instances matching the optional query (q) request param. This API should be used only if the query string is too big to fit in GET request with request param. The request has to made in application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_StatesController_filterStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/States"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "ea3b5bf8-c578-442c-b1ea-489b85d3a380",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "StatesController" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/filter",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/filter"
+    },
+    "/Countries1/Countries/search" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_searchCountriesByQueryFilters",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "deprecated" : true,
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the list of Countries instances matching the search criteria.",
+        "operationId" : "CountriesSw_CountriesController_searchCountriesByQueryFilters",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Countries"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        }, {
+          "schema" : {
+            "x-WM-IS_LIST" : false,
+            "type" : "array",
+            "items" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/QueryFilter"
+            }
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "043fcc23-2f90-4829-b46c-33db15f8f4fa",
+          "in" : "body",
+          "name" : "QueryFilter",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "queryFilters"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/search"
+    },
+    "/Countries1/Cities" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_createCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "create",
+        "description" : "Creates a new Cities instance.",
+        "operationId" : "CountriesSw_CitiesController_createCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Cities"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Cities"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "d3d81585-e4e4-40a2-8a95-f72701f15952",
+          "in" : "body",
+          "name" : "Cities",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Cities",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "cities"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_findCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "list",
+        "description" : "Returns the paginated list of Cities instances matching the optional query (q) request param. If there is no query provided, it returns all the instances. Pagination & Sorting parameters such as page& size, sort can be sent as request parameters. The sort value should be a comma separated list of field names & optional sort order to sort the data on. eg: field1 asc, field2 desc etc ",
+        "operationId" : "CountriesSw_CitiesController_findCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Cities"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "141f336b-3905-4734-8e3e-33e6fa995634",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities"
+    },
+    "/Countries1/Countries/filter" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_filterCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the paginated list of Countries instances matching the optional query (q) request param. This API should be used only if the query string is too big to fit in GET request with request param. The request has to made in application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CountriesController_filterCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Countries"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "015398c3-5081-49d7-80b8-123c85c56370",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/filter",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/filter"
+    },
+    "/Countries1/States/search" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_searchStatesByQueryFilters",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "deprecated" : true,
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the list of States instances matching the search criteria.",
+        "operationId" : "CountriesSw_StatesController_searchStatesByQueryFilters",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/States"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        }, {
+          "schema" : {
+            "x-WM-IS_LIST" : false,
+            "type" : "array",
+            "items" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/QueryFilter"
+            }
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "f79f0f69-38e2-4f79-b55f-1918d721da50",
+          "in" : "body",
+          "name" : "QueryFilter",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "queryFilters"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/search"
+    },
+    "/Countries1/Test3/aggregations" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_getTest3AggregatedValues",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns aggregated result with given aggregation info",
+        "operationId" : "CountriesSw_Test3Controller_getTest3AggregatedValues",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "additionalProperties" : {
+                  "x-WM-TYPE_ARGUMENTS" : [ ],
+                  "$ref" : "#/definitions/Object"
+                },
+                "type" : "object"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/AggregationInfo"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "d93b427c-2f0f-4fdd-9509-ff0d01090adf",
+          "in" : "body",
+          "name" : "AggregationInfo",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.AggregationInfo",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "aggregationInfo"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/aggregations",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/aggregations"
+    },
+    "/Countries1/Test3/search" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_searchTest3sByQueryFilters",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "deprecated" : true,
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the list of Test3 instances matching the search criteria.",
+        "operationId" : "CountriesSw_Test3Controller_searchTest3sByQueryFilters",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Test3"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        }, {
+          "schema" : {
+            "x-WM-IS_LIST" : false,
+            "type" : "array",
+            "items" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/QueryFilter"
+            }
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "af8bdba0-0c60-47c6-8538-5794cec3af28",
+          "in" : "body",
+          "name" : "QueryFilter",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "queryFilters"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/search"
+    },
+    "/Countries1/Cities/filter" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_filterCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the paginated list of Cities instances matching the optional query (q) request param. This API should be used only if the query string is too big to fit in GET request with request param. The request has to made in application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CitiesController_filterCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Cities"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "0f7c4f4a-7b6d-46f3-bf54-0aa2d8cc0f4d",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CitiesController" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/filter",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/filter"
+    },
+    "/Countries1/Test3/export" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_exportTest3sAndGetURL",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns a URL to download a file for the data matching the optional query (q) request param and the required fields provided in the Export Options.",
+        "operationId" : "CountriesSw_Test3Controller_exportTest3sAndGetURL",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/StringWrapper"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/DataExportOptions"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "ea51a8e7-0e05-4502-aead-f2ba7ad66fe8",
+          "in" : "body",
+          "name" : "DataExportOptions",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.DataExportOptions",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "exportOptions"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "Test3Controller" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/export",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/export"
+    },
+    "/Countries1/States/count" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_countStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of States instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_StatesController_countStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "33aedb7e-6f45-4c54-a7e3-355c78f87fda",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_countStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of States instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_StatesController_countStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "33aedb7e-6f45-4c54-a7e3-355c78f87fda",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/count"
+    },
+    "/Countries1/States/export" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_exportStatesAndGetURL",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns a URL to download a file for the data matching the optional query (q) request param and the required fields provided in the Export Options.",
+        "operationId" : "CountriesSw_StatesController_exportStatesAndGetURL",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/StringWrapper"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/DataExportOptions"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "9f865bed-762c-4402-8658-ee1153b19c64",
+          "in" : "body",
+          "name" : "DataExportOptions",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.DataExportOptions",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "exportOptions"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "StatesController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/export",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/export"
+    },
+    "/Countries1/Cities/export/{exportType}" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_exportCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CitiesController_exportCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "4d54880f-d3eb-4e06-9fbd-3a1d83978d53",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "ecc80263-d480-4401-839f-4ec0517111f6",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/export/{exportType}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_exportCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CitiesController_exportCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "4d54880f-d3eb-4e06-9fbd-3a1d83978d53",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "ecc80263-d480-4401-839f-4ec0517111f6",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/export/{exportType}"
+    },
+    "/Countries1/Countries/{id}" : {
+      "patch" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_patchCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Partially updates the Countries instance associated with the given id.",
+        "operationId" : "CountriesSw_CountriesController_patchCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Countries"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "af5bcc52-dae5-4a21-88ea-80e987b774f6",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Countries"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "22125686-6fb8-481c-bd7d-ec2eeb4da485",
+          "in" : "body",
+          "name" : "Countries",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Countries",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "countriesPatch"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/{id}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_getCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the Countries instance associated with the given id.",
+        "operationId" : "CountriesSw_CountriesController_getCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Countries"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "a6960d89-5d78-4745-acb5-b230c880d0e1",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/{id}",
+      "delete" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_deleteCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "delete",
+        "description" : "Deletes the Countries instance associated with the given id.",
+        "operationId" : "CountriesSw_CountriesController_deleteCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "boolean"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "1a789fe0-1a80-443e-87bf-e4be791dc7b9",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "put" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_editCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "update",
+        "description" : "Updates the Countries instance associated with the given id.",
+        "operationId" : "CountriesSw_CountriesController_editCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Countries"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "504d5d99-8ec9-4653-b369-ffc913edbede",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Countries"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "945d0938-ca5e-470c-a848-75a7d5aa9883",
+          "in" : "body",
+          "name" : "Countries",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Countries",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "countries"
+        } ],
+        "tags" : [ "CountriesController" ]
+      }
+    },
+    "/Countries1/Countries/count" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_countCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of Countries instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CountriesController_countCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "d0917419-a2ab-4998-917f-4bd9472805ca",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_countCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of Countries instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CountriesController_countCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "d0917419-a2ab-4998-917f-4bd9472805ca",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/count"
+    },
+    "/Countries1/Cities/aggregations" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_getCitiesAggregatedValues",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns aggregated result with given aggregation info",
+        "operationId" : "CountriesSw_CitiesController_getCitiesAggregatedValues",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "additionalProperties" : {
+                  "x-WM-TYPE_ARGUMENTS" : [ ],
+                  "$ref" : "#/definitions/Object"
+                },
+                "type" : "object"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/AggregationInfo"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "42bcdd81-de2f-422b-a5b0-5c955adfe234",
+          "in" : "body",
+          "name" : "AggregationInfo",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.AggregationInfo",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "aggregationInfo"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/aggregations",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/aggregations"
+    },
+    "/Countries1/Countries/aggregations" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_getCountriesAggregatedValues",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns aggregated result with given aggregation info",
+        "operationId" : "CountriesSw_CountriesController_getCountriesAggregatedValues",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "additionalProperties" : {
+                  "x-WM-TYPE_ARGUMENTS" : [ ],
+                  "$ref" : "#/definitions/Object"
+                },
+                "type" : "object"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/AggregationInfo"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "338fe00a-4405-42cf-a931-ff7405837869",
+          "in" : "body",
+          "name" : "AggregationInfo",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.AggregationInfo",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "aggregationInfo"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/aggregations",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/aggregations"
+    },
+    "/Countries1/States" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_createStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "create",
+        "description" : "Creates a new States instance.",
+        "operationId" : "CountriesSw_StatesController_createStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/States"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/States"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "7e3a7710-34cd-4ce4-8da1-39af6152067a",
+          "in" : "body",
+          "name" : "States",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.States",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "states"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_findStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "list",
+        "description" : "Returns the paginated list of States instances matching the optional query (q) request param. If there is no query provided, it returns all the instances. Pagination & Sorting parameters such as page& size, sort can be sent as request parameters. The sort value should be a comma separated list of field names & optional sort order to sort the data on. eg: field1 asc, field2 desc etc ",
+        "operationId" : "CountriesSw_StatesController_findStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/States"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "1fa475f7-04f0-45cb-87b9-e96bc7b47d18",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States"
+    },
+    "/Countries1/Test3" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_createTest3",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "create",
+        "description" : "Creates a new Test3 instance.",
+        "operationId" : "CountriesSw_Test3Controller_createTest3",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Test3"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Test3"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "7e64b3db-38e4-48fd-8720-8492b40b88b4",
+          "in" : "body",
+          "name" : "Test3",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Test3",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "test3"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_findTest3s",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "list",
+        "description" : "Returns the paginated list of Test3 instances matching the optional query (q) request param. If there is no query provided, it returns all the instances. Pagination & Sorting parameters such as page& size, sort can be sent as request parameters. The sort value should be a comma separated list of field names & optional sort order to sort the data on. eg: field1 asc, field2 desc etc ",
+        "operationId" : "CountriesSw_Test3Controller_findTest3s",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Test3"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "0c3885ab-ad2d-4ce7-8006-9fb0c0cc13f9",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3"
+    },
+    "/Countries1/States/{id}" : {
+      "patch" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_patchStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Partially updates the States instance associated with the given id.",
+        "operationId" : "CountriesSw_StatesController_patchStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/States"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "818c0859-0f01-47e0-8115-51a95be5c927",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/States"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "bed8d0af-2944-48c4-a162-816dda1b89e7",
+          "in" : "body",
+          "name" : "States",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.States",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "statesPatch"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/{id}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_getStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the States instance associated with the given id.",
+        "operationId" : "CountriesSw_StatesController_getStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/States"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "f76639a4-ff2f-457b-aedf-83f9de85bf96",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/{id}",
+      "delete" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_deleteStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "delete",
+        "description" : "Deletes the States instance associated with the given id.",
+        "operationId" : "CountriesSw_StatesController_deleteStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "boolean"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "3c4f37ee-4461-45a3-842b-4a5d77caca43",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "put" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_editStates",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "update",
+        "description" : "Updates the States instance associated with the given id.",
+        "operationId" : "CountriesSw_StatesController_editStates",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/States"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "0b5f0697-e907-4f95-ac9b-aba2683aa6e4",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/States"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "b2bf41f4-c45c-4613-b09d-e65bd5f81e64",
+          "in" : "body",
+          "name" : "States",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.States",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "states"
+        } ],
+        "tags" : [ "StatesController" ]
+      }
+    },
+    "/Countries1/Cities/count" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_countCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of Cities instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CitiesController_countCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "c5c91ceb-3585-4fae-8b73-41f64fd4cf22",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_countCities",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of Cities instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CitiesController_countCities",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "c5c91ceb-3585-4fae-8b73-41f64fd4cf22",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/count"
+    },
+    "/Countries1/Test3/{id}" : {
+      "patch" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_patchTest3",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Partially updates the Test3 instance associated with the given id.",
+        "operationId" : "CountriesSw_Test3Controller_patchTest3",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Test3"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "b8090817-3b45-416a-a858-88da698c605a",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Test3"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "f47636d5-137f-4983-8cf6-8abed1029e5a",
+          "in" : "body",
+          "name" : "Test3",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Test3",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "test3Patch"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/{id}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_getTest3",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the Test3 instance associated with the given id.",
+        "operationId" : "CountriesSw_Test3Controller_getTest3",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Test3"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "d4772f59-16d3-4488-ab9f-0acc316f264d",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/{id}",
+      "delete" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_deleteTest3",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "delete",
+        "description" : "Deletes the Test3 instance associated with the given id.",
+        "operationId" : "CountriesSw_Test3Controller_deleteTest3",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "boolean"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "a652f11d-91b2-43b6-9211-5295c2a4427d",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "put" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_editTest3",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-OPERATION_TYPE" : "update",
+        "description" : "Updates the Test3 instance associated with the given id.",
+        "operationId" : "CountriesSw_Test3Controller_editTest3",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Test3"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "2d7e9d8d-affb-4b69-b7c7-139bc07100c0",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Test3"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "21581920-156f-4e2c-b37c-05166ca1b217",
+          "in" : "body",
+          "name" : "Test3",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.customer_issues.countries1.Test3",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "test3"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      }
+    },
+    "/Countries1/Test3/export/{exportType}" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_exportTest3s",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_Test3Controller_exportTest3s",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "c0ffb3de-8e40-4b79-965b-e2036cf6a883",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "7446efd0-deae-474c-8d30-0fcba661523e",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/export/{exportType}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_exportTest3s",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_Test3Controller_exportTest3s",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "c0ffb3de-8e40-4b79-965b-e2036cf6a883",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "7446efd0-deae-474c-8d30-0fcba661523e",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/export/{exportType}"
+    },
+    "/Countries1/Countries/export" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_exportCountriesAndGetURL",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns a URL to download a file for the data matching the optional query (q) request param and the required fields provided in the Export Options.",
+        "operationId" : "CountriesSw_CountriesController_exportCountriesAndGetURL",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/StringWrapper"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/DataExportOptions"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "1eee3f09-a099-49c8-8663-52f93081afb6",
+          "in" : "body",
+          "name" : "DataExportOptions",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.DataExportOptions",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "exportOptions"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/export",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/export"
+    },
+    "/Countries1/Test3/count" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_countTest3s",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of Test3 instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_Test3Controller_countTest3s",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "a16c886a-6b31-407e-adf6-301d5f489a66",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_countTest3s",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the total count of Test3 instances matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_Test3Controller_countTest3s",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "a16c886a-6b31-407e-adf6-301d5f489a66",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        } ],
+        "tags" : [ "Test3Controller" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/count"
+    },
+    "/Countries1/States/aggregations" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_StatesController_getStatesAggregatedValues",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.StatesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns aggregated result with given aggregation info",
+        "operationId" : "CountriesSw_StatesController_getStatesAggregatedValues",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "additionalProperties" : {
+                  "x-WM-TYPE_ARGUMENTS" : [ ],
+                  "$ref" : "#/definitions/Object"
+                },
+                "type" : "object"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/AggregationInfo"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "1145ed0e-6609-444c-ae34-9470eb08357a",
+          "in" : "body",
+          "name" : "AggregationInfo",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.AggregationInfo",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "aggregationInfo"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "StatesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/States",
+      "x-WM-TAG" : "StatesController",
+      "x-WM-RELATIVE_PATH" : "/aggregations",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/States/aggregations"
+    },
+    "/Countries1/Cities/search" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_searchCitiesByQueryFilters",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "deprecated" : true,
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the list of Cities instances matching the search criteria.",
+        "operationId" : "CountriesSw_CitiesController_searchCitiesByQueryFilters",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Cities"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        }, {
+          "schema" : {
+            "x-WM-IS_LIST" : false,
+            "type" : "array",
+            "items" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/QueryFilter"
+            }
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "80415092-fc1b-431e-a711-6747e0fc9620",
+          "in" : "body",
+          "name" : "QueryFilter",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "queryFilters"
+        } ],
+        "tags" : [ "CitiesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/search"
+    },
+    "/Countries1/Countries/{id}/stateses" : {
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/{id}/stateses",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_findAssociatedStateses",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Gets the stateses instance associated with the given id.",
+        "operationId" : "CountriesSw_CountriesController_findAssociatedStateses",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/States"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "cf4e40b8-2d52-436f-af6c-9a4313aaca77",
+          "in" : "path",
+          "name" : "id",
+          "format" : "int32",
+          "type" : "integer",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "id"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/{id}/stateses"
+    },
+    "/Countries1/Cities/export" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CitiesController_exportCitiesAndGetURL",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CitiesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns a URL to download a file for the data matching the optional query (q) request param and the required fields provided in the Export Options.",
+        "operationId" : "CountriesSw_CitiesController_exportCitiesAndGetURL",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/StringWrapper"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "schema" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/DataExportOptions"
+          },
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "af831cb0-35c9-4a02-9e75-026dad489a59",
+          "in" : "body",
+          "name" : "DataExportOptions",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.DataExportOptions",
+          "required" : true,
+          "x-WM-ORIGINAL-NAME" : "exportOptions"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CitiesController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Cities",
+      "x-WM-TAG" : "CitiesController",
+      "x-WM-RELATIVE_PATH" : "/export",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Cities/export"
+    },
+    "/Countries1/Test3/filter" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_Test3Controller_filterTest3s",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.Test3Controller",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "description" : "Returns the paginated list of Test3 instances matching the optional query (q) request param. This API should be used only if the query string is too big to fit in GET request with request param. The request has to made in application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_Test3Controller_filterTest3s",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "x-WM-TYPE_ARGUMENTS" : [ ],
+                "$ref" : "#/definitions/Test3"
+              } ],
+              "$ref" : "#/definitions/Page"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "e2d6727a-abba-4fe9-96d1-ff2731f501e8",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "Test3Controller" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Test3",
+      "x-WM-TAG" : "Test3Controller",
+      "x-WM-RELATIVE_PATH" : "/filter",
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Test3/filter"
+    },
+    "/Countries1/Countries/export/{exportType}" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_exportCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CountriesController_exportCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "28c38704-01ca-417c-b336-4aae2a1ac943",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "42d73198-86ae-4748-a6bd-5939f952db32",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-BASE_PATH" : "/Countries1/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/export/{exportType}",
+      "get" : {
+        "x-WM-METHOD_NAME" : "CountriesSw_CountriesController_exportCountries",
+        "x-WM-CRUD_OPERATION_ID" : "CountriesSw.CountriesController",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/octet-stream" ],
+        "description" : "Returns downloadable file for the data matching the optional query (q) request param. If query string is too big to fit in GET request's query param, use POST method with application/x-www-form-urlencoded format.",
+        "operationId" : "CountriesSw_CountriesController_exportCountries",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-TYPE_ARGUMENTS" : [ ],
+              "$ref" : "#/definitions/Downloadable"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "28c38704-01ca-417c-b336-4aae2a1ac943",
+          "in" : "path",
+          "name" : "exportType",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.export.ExportType",
+          "required" : true,
+          "enum" : [ "EXCEL", "CSV" ],
+          "x-WM-ORIGINAL-NAME" : "exportType"
+        }, {
+          "x-WM-EDITABLE" : true,
+          "x-WM-UUID" : "42d73198-86ae-4748-a6bd-5939f952db32",
+          "in" : "query",
+          "name" : "q",
+          "description" : "conditions to filter the results",
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-ORIGINAL-NAME" : "query"
+        }, {
+          "default" : 0,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable",
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "page",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "default" : 20,
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "size",
+          "format" : "int32",
+          "type" : "integer",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sort",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "CountriesController" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${CountriesSw.scheme}://${CountriesSw.host}${CountriesSw.basepath}/Countries1/Countries/export/{exportType}"
+    }
+  },
+  "host" : "${CountriesSw.host}",
+  "schemes" : [ "${CountriesSw.scheme}" ],
+  "definitions" : {
+    "StringWrapper" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/AbstractPrimitiveWrapper"
+      }, { } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.StringWrapper",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ]
+    },
+    "Countries" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Countries",
+      "x-WM-TAGS" : [ "CountriesController" ],
+      "properties" : {
+        "sortname" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "phonecode" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "InputStream" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.InputStream",
+      "x-WM-TAGS" : [ "CitiesController" ]
+    },
+    "Page" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Page",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ],
+      "properties" : {
+        "number" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "numberOfElements" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "size" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "pageable" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/Pageable"
+        },
+        "sort" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/Sort"
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "content" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Object"
+          }
+        },
+        "totalElements" : {
+          "format" : "int64",
+          "type" : "integer"
+        }
+      }
+    },
+    "AbstractPrimitiveWrapper" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.AbstractPrimitiveWrapper",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "result" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/Object"
+        }
+      }
+    },
+    "Downloadable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Downloadable",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ],
+      "properties" : {
+        "fileName" : {
+          "type" : "string"
+        },
+        "inline" : {
+          "type" : "boolean"
+        },
+        "contents" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/InputStream"
+        },
+        "contentLength" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "contentType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Test3" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Test3",
+      "x-WM-TAGS" : [ "Test3Controller" ],
+      "properties" : {
+        "val" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "Aggregation" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Aggregation",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "field" : {
+          "type" : "string"
+        },
+        "alias" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string",
+          "enum" : [ "SUM", "MIN", "MAX", "AVG", "COUNT" ]
+        }
+      }
+    },
+    "States" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.States",
+      "x-WM-TAGS" : [ "CountriesController", "StatesController" ],
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "countries" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/Countries"
+        },
+        "countryId" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "QueryFilter" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.QueryFilter",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ],
+      "properties" : {
+        "attributeValue" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/Object"
+        },
+        "attributeType" : {
+          "type" : "string",
+          "enum" : [ "BIG_DECIMAL", "BIG_INTEGER", "BLOB", "BOOLEAN", "BYTE", "CALENDAR", "CALENDAR_DATE", "CHARACTER", "CLOB", "CURRENCY", "DATE", "DOUBLE", "FLOAT", "INTEGER", "LONG", "LOCALE", "STRING", "SHORT", "TEXT", "TIME", "DATETIME", "TIMESTAMP", "TIMEZONE", "TRUE_FALSE", "YES_NO" ]
+        },
+        "filterCondition" : {
+          "type" : "string",
+          "enum" : [ "STARTING_WITH", "ENDING_WITH", "CONTAINING", "EQUALS", "NOT_EQUALS", "BETWEEN", "LESS_THAN", "LESS_THAN_OR_EQUALS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "NULL", "EMPTY", "LIKE", "IN", "NULL_OR_EMPTY", "IS" ]
+        },
+        "attributeName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Pageable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Pageable",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "paged" : {
+          "type" : "boolean"
+        },
+        "pageNumber" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "offset" : {
+          "format" : "int64",
+          "type" : "integer"
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "unpaged" : {
+          "type" : "boolean"
+        },
+        "sort" : {
+          "x-WM-TYPE_ARGUMENTS" : [ ],
+          "$ref" : "#/definitions/Sort"
+        }
+      }
+    },
+    "DataExportOptions" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/ExportOptions"
+      }, {
+        "properties" : {
+          "query" : {
+            "type" : "string"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.DataExportOptions",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ]
+    },
+    "ExportOptions" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.ExportOptions",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "exportSize" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "fileName" : {
+          "type" : "string"
+        },
+        "exportType" : {
+          "type" : "string",
+          "enum" : [ "EXCEL", "CSV" ]
+        },
+        "fields" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/FieldInfo"
+          }
+        }
+      }
+    },
+    "Sort$Order" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Sort$Order",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "nullHandling" : {
+          "type" : "string",
+          "enum" : [ "NATIVE", "NULLS_FIRST", "NULLS_LAST" ]
+        },
+        "ignoreCase" : {
+          "type" : "boolean"
+        },
+        "property" : {
+          "type" : "string"
+        },
+        "direction" : {
+          "type" : "string",
+          "enum" : [ "ASC", "DESC" ]
+        }
+      }
+    },
+    "Sort" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Sort",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "orders" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Sort$Order"
+          }
+        }
+      }
+    },
+    "Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Object",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ]
+    },
+    "Cities" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Cities",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "stateId" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "AggregationInfo" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.AggregationInfo",
+      "x-WM-TAGS" : [ "CitiesController", "CountriesController", "StatesController", "Test3Controller" ],
+      "properties" : {
+        "filter" : {
+          "type" : "string"
+        },
+        "groupByFields" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "aggregations" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "x-WM-TYPE_ARGUMENTS" : [ ],
+            "$ref" : "#/definitions/Aggregation"
+          }
+        }
+      }
+    },
+    "FieldInfo" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.FieldInfo",
+      "x-WM-TAGS" : [ "CitiesController" ],
+      "properties" : {
+        "expression" : {
+          "type" : "string"
+        },
+        "field" : {
+          "type" : "string"
+        },
+        "header" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "description" : "Swagger API documentation for Countries1",
+    "x-WM-SERVICE_ID" : "CountriesSw",
+    "title" : "Countries1Service Swagger Documentation",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "OpenAPIService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.CitiesController",
+    "name" : "CitiesController",
+    "description" : "Exposes APIs to work with Cities resource.",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "Cities"
+  }, {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.CountriesController",
+    "name" : "CountriesController",
+    "description" : "Exposes APIs to work with Countries resource.",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "Countries"
+  }, {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.ProcedureExecutionController",
+    "name" : "ProcedureExecutionController",
+    "description" : "controller class for procedure execution",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "ProcedureExecution"
+  }, {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.QueryExecutionController",
+    "name" : "QueryExecutionController",
+    "description" : "controller class for query execution",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "QueryExecution"
+  }, {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.StatesController",
+    "name" : "StatesController",
+    "description" : "Exposes APIs to work with States resource.",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "States"
+  }, {
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.CountriesSw.Test3Controller",
+    "name" : "Test3Controller",
+    "description" : "Exposes APIs to work with Test3 resource.",
+    "x-WM-VERSION" : "",
+    "x-WM-CONTROLLER_NAME" : "Test3"
+  } ]
+}

@@ -1,0 +1,387 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Api Documentation",
+    "version" : "1.0",
+    "title" : "Api Documentation",
+    "termsOfService" : "urn:tos",
+    "contact" : { },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-SERVICE_ID" : "herokuapp",
+    "x-WM-SERVICE_TYPE" : "OpenAPIService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "host" : "wm-swagger-oauth.herokuapp.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "todo-controller",
+    "description" : "Todo Controller",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.herokuapp.todo-controller"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/herokuapp/todo" : {
+      "get" : {
+        "tags" : [ "todo-controller" ],
+        "summary" : "getAllTodos",
+        "operationId" : "herokuapp_getAllTodosUsingGET",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Todo"
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "security" : [ {
+          "google" : [ "openid" ]
+        } ],
+        "x-WM-METHOD_NAME" : "herokuapp_getAllTodosUsingGET",
+        "x-WM-CRUD_OPERATION_ID" : "herokuapp.todo-controller",
+        "x-WM-OPERATION_TYPE" : "list"
+      },
+      "x-WM-BASE_PATH" : "/herokuapp/todo",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "${herokuapp.scheme}://${herokuapp.host}${herokuapp.basepath}/todo/"
+    },
+    "/herokuapp/todo/add" : {
+      "post" : {
+        "tags" : [ "todo-controller" ],
+        "summary" : "addTodo",
+        "operationId" : "herokuapp_addTodoUsingPOST",
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "todo",
+          "description" : "todo",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Todo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "security" : [ {
+          "google" : [ "openid" ]
+        } ],
+        "x-WM-METHOD_NAME" : "herokuapp_addTodoUsingPOST",
+        "x-WM-CRUD_OPERATION_ID" : "herokuapp.todo-controller",
+        "x-WM-OPERATION_TYPE" : "create"
+      },
+      "x-WM-BASE_PATH" : "/herokuapp/todo",
+      "x-WM-RELATIVE_PATH" : "/add",
+      "x-WM-COMPLETE_PATH" : "${herokuapp.scheme}://${herokuapp.host}${herokuapp.basepath}/todo/add"
+    },
+    "/herokuapp/todo/pageable" : {
+      "get" : {
+        "tags" : [ "todo-controller" ],
+        "summary" : "getAllPageableTodos",
+        "operationId" : "herokuapp_getAllPageableTodosUsingGET",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/Page«Todo»"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "security" : [ {
+          "google" : [ "openid" ]
+        } ],
+        "x-WM-METHOD_NAME" : "herokuapp_getAllPageableTodosUsingGET",
+        "x-WM-CRUD_OPERATION_ID" : "herokuapp.todo-controller"
+      },
+      "x-WM-BASE_PATH" : "/herokuapp/todo",
+      "x-WM-RELATIVE_PATH" : "/pageable",
+      "x-WM-COMPLETE_PATH" : "${herokuapp.scheme}://${herokuapp.host}${herokuapp.basepath}/todo/pageable"
+    },
+    "/herokuapp/todo/{todoId}" : {
+      "get" : {
+        "tags" : [ "todo-controller" ],
+        "summary" : "getTodoById",
+        "operationId" : "herokuapp_getTodoByIdUsingGET",
+        "parameters" : [ {
+          "name" : "todoId",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/Todo"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "security" : [ {
+          "google" : [ "openid" ]
+        } ],
+        "x-WM-METHOD_NAME" : "herokuapp_getTodoByIdUsingGET",
+        "x-WM-CRUD_OPERATION_ID" : "herokuapp.todo-controller"
+      },
+      "put" : {
+        "tags" : [ "todo-controller" ],
+        "summary" : "updateTodo",
+        "operationId" : "herokuapp_updateTodoUsingPUT",
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Todo",
+          "description" : "Todo",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Todo"
+          }
+        }, {
+          "name" : "todoId",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "security" : [ {
+          "google" : [ "openid" ]
+        } ],
+        "x-WM-METHOD_NAME" : "herokuapp_updateTodoUsingPUT",
+        "x-WM-CRUD_OPERATION_ID" : "herokuapp.todo-controller",
+        "x-WM-OPERATION_TYPE" : "update"
+      },
+      "delete" : {
+        "tags" : [ "todo-controller" ],
+        "summary" : "deleteTodoById",
+        "operationId" : "herokuapp_deleteTodoByIdUsingDELETE",
+        "parameters" : [ {
+          "name" : "todoId",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        },
+        "security" : [ {
+          "google" : [ "openid" ]
+        } ],
+        "x-WM-METHOD_NAME" : "herokuapp_deleteTodoByIdUsingDELETE",
+        "x-WM-CRUD_OPERATION_ID" : "herokuapp.todo-controller",
+        "x-WM-OPERATION_TYPE" : "delete"
+      },
+      "x-WM-BASE_PATH" : "/herokuapp/todo",
+      "x-WM-RELATIVE_PATH" : "/{todoId}",
+      "x-WM-COMPLETE_PATH" : "${herokuapp.scheme}://${herokuapp.host}${herokuapp.basepath}/todo/{todoId}"
+    }
+  },
+  "securityDefinitions" : {
+    "google" : {
+      "type" : "oauth2",
+      "authorizationUrl" : "https://accounts.google.com/o/oauth2/v2/auth",
+      "tokenUrl" : "https://oauth2.googleapis.com/token",
+      "flow" : "accessCode",
+      "scopes" : {
+        "openid" : "openid"
+      },
+      "x-WM-PROVIDER_ID" : "herokuapp_google"
+    }
+  },
+  "definitions" : {
+    "Pageable" : {
+      "properties" : {
+        "offset" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageNumber" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageSize" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "paged" : {
+          "type" : "boolean"
+        },
+        "sort" : {
+          "$ref" : "#/definitions/Sort"
+        },
+        "unpaged" : {
+          "type" : "boolean"
+        }
+      },
+      "type" : "object",
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.herokuapp.Pageable"
+    },
+    "Page«Todo»" : {
+      "properties" : {
+        "content" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Todo"
+          }
+        },
+        "empty" : {
+          "type" : "boolean"
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "number" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "numberOfElements" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageable" : {
+          "$ref" : "#/definitions/Pageable"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sort" : {
+          "$ref" : "#/definitions/Sort"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "type" : "object",
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.herokuapp.Page«Todo»"
+    },
+    "Sort" : {
+      "properties" : {
+        "empty" : {
+          "type" : "boolean"
+        },
+        "sorted" : {
+          "type" : "boolean"
+        },
+        "unsorted" : {
+          "type" : "boolean"
+        }
+      },
+      "type" : "object",
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.herokuapp.Sort"
+    },
+    "Todo" : {
+      "properties" : {
+        "todoDescription" : {
+          "type" : "string"
+        },
+        "todoId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "todoTitle" : {
+          "type" : "string"
+        }
+      },
+      "type" : "object",
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.herokuapp.Todo"
+    }
+  }
+}

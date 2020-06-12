@@ -1,0 +1,17 @@
+<wm-page pagetitle="Wm 17658" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button4" on-click="button4Click($event, widget)"></wm-button>
+            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="staticVariable1List2" dataset="bind:Variables.staticVariable1.dataSet" navigation="Basic" pagesize="2">
+                <wm-listtemplate layout="inline" name="listtemplate3">
+                    <wm-container class="media-body" padding="unset unset unset 1.25em" name="container8">
+                        <wm-label name="Name" class="p media-heading" caption="bind:Variables.staticVariable1.dataSet[$i].dataValue" fontsize="1.143" fontunit="em"></wm-label>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

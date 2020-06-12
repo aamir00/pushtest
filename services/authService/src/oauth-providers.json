@@ -1,0 +1,85 @@
+[ {
+  "providerId" : "swagger_petstore_auth",
+  "authorizationUrl" : "${oauth2.swagger_petstore_auth.authorizationUrl}",
+  "accessTokenUrl" : "${oauth2.swagger_petstore_auth.accessTokenUrl}",
+  "clientId" : "${oauth2.swagger_petstore_auth.clientId}",
+  "clientSecret" : "${oauth2.swagger_petstore_auth.clientSecret}",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "read:pets",
+    "value" : "read your pets"
+  }, {
+    "name" : "write:pets",
+    "value" : "modify pets in your account"
+  } ]
+}, {
+  "providerId" : "swagger2_petstore_auth",
+  "authorizationUrl" : "${oauth2.swagger2_petstore_auth.authorizationUrl}",
+  "accessTokenUrl" : "${oauth2.swagger2_petstore_auth.accessTokenUrl}",
+  "clientId" : "${oauth2.swagger2_petstore_auth.clientId}",
+  "clientSecret" : "${oauth2.swagger2_petstore_auth.clientSecret}",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "read:pets",
+    "value" : "read your pets"
+  }, {
+    "name" : "write:pets",
+    "value" : "modify pets in your account"
+  } ]
+}, {
+  "providerId" : "petstore_petstore_auth",
+  "authorizationUrl" : "${oauth2.petstore_petstore_auth.authorizationUrl}",
+  "accessTokenUrl" : "${oauth2.petstore_petstore_auth.accessTokenUrl}",
+  "clientId" : "${oauth2.petstore_petstore_auth.clientId}",
+  "clientSecret" : "${oauth2.petstore_petstore_auth.clientSecret}",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "read:pets",
+    "value" : "read your pets"
+  }, {
+    "name" : "write:pets",
+    "value" : "modify pets in your account"
+  } ]
+}, {
+  "providerId" : "herokuapp_google",
+  "authorizationUrl" : "${oauth2.herokuapp_google.authorizationUrl}",
+  "accessTokenUrl" : "${oauth2.herokuapp_google.accessTokenUrl}",
+  "clientId" : "${oauth2.herokuapp_google.clientId}",
+  "clientSecret" : "${oauth2.herokuapp_google.clientSecret}",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "openid",
+    "value" : "openid"
+  }, {
+    "name" : "opendi",
+    "value" : "openid"
+  } ]
+}, {
+  "providerId" : "herokuapp2_google",
+  "authorizationUrl" : "${oauth2.herokuapp2_google.authorizationUrl}",
+  "accessTokenUrl" : "${oauth2.herokuapp2_google.accessTokenUrl}",
+  "clientId" : "${oauth2.herokuapp2_google.clientId}",
+  "clientSecret" : "${oauth2.herokuapp2_google.clientSecret}",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "openid",
+    "value" : "openid"
+  } ]
+}, {
+  "providerId" : "herokuapp_google",
+  "authorizationUrl" : "${oauth2.herokuapp_google.authorizationUrl}",
+  "accessTokenUrl" : "${oauth2.herokuapp_google.accessTokenUrl}",
+  "clientId" : "${oauth2.herokuapp_google.clientId}",
+  "clientSecret" : "${oauth2.herokuapp_google.clientSecret}",
+  "sendAccessTokenAs" : null,
+  "accessTokenParamName" : null,
+  "scopes" : [ {
+    "name" : "openid",
+    "value" : "openid"
+  } ]
+} ]

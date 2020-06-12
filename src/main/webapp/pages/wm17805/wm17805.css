@@ -1,0 +1,58 @@
+/*.wm-app .app-checkboxset, .wm-app   .app-radioset{*/
+/*    border: 1px solid #aaa;*/
+/*    border-left: 0;*/
+/*    margin:0;*/
+/*}*/
+/*.wm-app  .app-checkboxset.inline li,*/
+/*.wm-app  .app-radioset.inline li{*/
+/*    margin: 0;*/
+/*    width: 33.33%;*/
+/*    border-left: 1px solid #aaa;*/
+/*    border-bottom: 1px solid #aaa;*/
+/*}*/
+/*.wm-app  .app-checkboxset.inline li:last-child,*/
+/*.wm-app   .app-radioset.inline li:last-child {*/
+/*    border-right: 1px solid #aaa;*/
+/*}*/
+/*.wm-app .col-md-12  .app-checkboxset.inline li,*/
+/*.wm-app .col-md-12  .app-radioset.inline li{*/
+/*    width: 100%;*/
+/*}*/
+/*.wm-app .form-group .checkbox+.checkbox, */
+/*.wm-app .form-group .radio+.radio{*/
+/*    margin-top:0;*/
+/*}*/
+/*.wm-app   .radio label, .wm-app   .checkbox label {*/
+/*    padding: 5px 12px;*/
+/*}*/
+
+
+
+.wm-app .grid-checkboxset .app-checkboxset, .wm-app .grid-checkboxset .app-radioset{
+    border: 1px solid #aaa;
+    border-left: 0;
+    margin:0;
+}
+.wm-app .grid-checkboxset .app-checkboxset.inline li,
+.wm-app .grid-checkboxset .app-radioset.inline li{
+    margin: 0;
+    width: 33.33%;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+.wm-app .grid-checkboxset .app-checkboxset.inline li:last-child,
+.wm-app .grid-checkboxset .app-radioset.inline li:last-child {
+    border-right: 1px solid #aaa;
+}
+.wm-app .form-group .checkbox+.checkbox, 
+.wm-app .form-group .radio+.radio{
+    margin-top:0;
+}
+.wm-app .grid-checkboxset .radio label, .wm-app .grid-checkboxset .checkbox label {
+    padding: 5px 12px;
+}
+
+.wm-app .col-md-12.grid-checkboxset .app-checkboxset.inline li,
+.wm-app .col-md-12.grid-checkboxset .app-radioset.inline li{
+    width: 100%;
+}

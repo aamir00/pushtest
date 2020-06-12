@@ -1,0 +1,6 @@
+{
+  "id" : "Countries1",
+  "type" : "DataService",
+  "packageNames" : [ "com.customer_issues.countries1" ],
+  "title" : "Countries1"
+}

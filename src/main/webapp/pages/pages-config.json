@@ -1,0 +1,104 @@
+[ {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "checkboxTemplate",
+  "type" : "TEMPLATE",
+  "params" : [ {
+    "name" : "item",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "petstore",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "todo",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+}, {
+  "name" : "wm17488",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17495",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17580",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17638_inflight",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17640",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17640a",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17640b",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17658",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17727",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17795",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17805",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17805a",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17808",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "wm17809",
+  "type" : "PAGE",
+  "params" : [ ]
+} ]

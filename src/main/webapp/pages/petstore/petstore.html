@@ -1,0 +1,50 @@
+<wm-page pagetitle="Petstore" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-table gridfirstrowselect="true" editmode="dialog" name="petTable2" title="pet List" dataset="bind:Variables.SwaggerPet.dataSet" navigation="Basic">
+                <wm-table-column binding="id" caption="Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-column binding="photoUrls" caption="Photo Urls" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-column binding="status" caption="Status" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-column binding="category.id" caption="Category Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                <wm-table-column binding="category.name" caption="Category Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-column binding="tags[0].id" caption="Tags[0] Id" pcdisplay="true" mobiledisplay="true" type="long"></wm-table-column>
+                <wm-table-column binding="tags[0].name" caption="Tags[0] Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+            </wm-table>
+            <wm-form errormessage="" title="pet Info" formlayout="dialog" iconclass="wi wi-edit" method="post" dataset="bind:Variables.SwaggerPet.dataSet" captionalign="left" captionposition="top" name="petForm1" dependson="petTable2">
+                <wm-layoutgrid columns="3" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                            <wm-form-field readonly="false" name="category" displayname="Category" key="category" type="list" show="true" widget="select"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                            <wm-form-field readonly="false" name="id" displayname="Id" key="id" type="long" show="true" widget="number" textalign="right"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                            <wm-form-field readonly="false" name="name" displayname="Name" key="name" type="string" show="true" widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                            <wm-form-field readonly="false" name="status" displayname="Status" key="status" type="string" show="true" widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                            <wm-form-field readonly="false" name="photoUrls" displayname="Photo Urls" key="photoUrls" type="string" show="true" widget="text" multiple="true"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                            <wm-form-field readonly="false" name="tags" displayname="Tags" key="tags" type="list" show="true" widget="select" multiple="true"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-form-action key="reset" class="form-reset btn-secondary" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-layoutgrid>
+            </wm-form>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

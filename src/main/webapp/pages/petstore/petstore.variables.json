@@ -1,0 +1,32 @@
+{
+  "SwaggerPet" : {
+    "_id" : "wm-SwaggerPet-wm.CrudVariable-1591695796394",
+    "name" : "SwaggerPet",
+    "owner" : "Page",
+    "category" : "wm.CrudVariable",
+    "type" : "void",
+    "service" : "swagger",
+    "operation" : "pet",
+    "crudOperationId" : "swagger.pet",
+    "operationType" : "create",
+    "serviceType" : "OpenAPIService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : false,
+    "controller" : "pet",
+    "dataBinding" : {
+      "list" : [ {
+        "isList" : true,
+        "target" : "status",
+        "value" : "available",
+        "type" : "string"
+      } ]
+    }
+  }
+}

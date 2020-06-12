@@ -1,0 +1,6 @@
+{
+  "id" : "hrdb",
+  "type" : "DataService",
+  "packageNames" : [ "com.customer_issues.hrdb" ],
+  "title" : "hrdb"
+}

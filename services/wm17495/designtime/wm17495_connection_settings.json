@@ -1,0 +1,31 @@
+{
+  "endpointAddress" : "https://www.wavemakeronline.com/run-hp7z3jt2yx/test00_master/services/hrdb/Department",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : {
+    "type" : "BASIC"
+  },
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Thu, 16 Apr 2020 06:16:15 GMT" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-WM-Request-Track-Id" : [ "app.fND03x5K" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Connection" : [ "close" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Server-Timing" : [ "server;dur=6" ],
+      "Set-Cookie" : [ "JSESSIONID=0D64635AC507AC3DDA7C73BF01FCA2AF; Path=/run-hp7z3jt2yx/test00_master; Secure; HttpOnly" ],
+      "Cache-Control" : [ "max-age=0" ],
+      "ETag" : [ "\"0bf1501f668027e3350b798768031cd17\"" ]
+    },
+    "responseBody" : "{\"content\":[{\"deptId\":1,\"name\":\"Engineering\",\"budget\":1936760,\"q1\":445455,\"q2\":522925,\"q3\":426087,\"q4\":542293,\"deptCode\":\"Eng\",\"location\":\"San Francisco\",\"tenantId\":1}],\"totalPages\":1,\"totalElements\":5,\"last\":true,\"sort\":[],\"first\":true,\"numberOfElements\":5,\"size\":20,\"number\":0}",
+    "convertedResponse" : null
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "endpointAddress" : null,
+  "method" : null,
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : null,
+  "queryParams" : null,
+  "authDetails" : null,
+  "contentType" : null,
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : null
+}

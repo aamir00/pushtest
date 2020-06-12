@@ -1,0 +1,31 @@
+<wm-page pagetitle="Wm 17808" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-table editmode="inline" name="TestTable2" title="Test List" dataset="bind:Variables.TempDBTestData.dataSet" navigation="Basic">
+                <wm-table-column binding="id" caption="Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="val1" caption="Val1" widget-type="checkbox" edit-widget-type="checkbox" type="boolean" generator="assigned" show="true" readonly="false">
+                    <wm-checkbox datavalue="bind:row.getProperty('val1')" disabled="bind:true" class="" conditionalclass="" conditionalstyle=""></wm-checkbox>
+                </wm-table-column>
+                <wm-table-column binding="val2" caption="Val2" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="val3" caption="Val3" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+            </wm-table>
+            <wm-table editmode="quickedit" name="TestTable3" title="Test List" dataset="bind:Variables.TempDBTestData.dataSet" navigation="Basic">
+                <wm-table-column binding="id" caption="Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="val1" caption="Val1" widget-type="checkbox" edit-widget-type="checkbox" type="boolean" generator="assigned" show="true" readonly="false">
+                    <wm-checkbox datavalue="bind:row.getProperty('val1')" disabled="bind:true" class="" conditionalclass="" conditionalstyle=""></wm-checkbox>
+                </wm-table-column>
+                <wm-table-column binding="val2" caption="Val2" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="val3" caption="Val3" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+            </wm-table>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

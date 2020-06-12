@@ -1,0 +1,1019 @@
+/*START - Vintage Theme*/
+
+.wm-app {
+
+  @import url("../../../components/bootstrap/less/bootstrap.less");
+  @import url("variables.less");
+
+  font-size: @font-size-base;
+  color: @text-color;
+  font-family: @font-family-base;
+  background-color: @body-bg;
+
+//Header
+  @wm-header-border-color: rgba(0, 0, 0, 0.1);
+  @wm-header-text-color:  #bcd4af;
+  @wm-header-bg-color: #273135;
+  @wm-header-height: auto;
+
+//left panel
+  @wm-left-panel-bg: #F5F6EA;
+  @wm-left-panel-list-border: 1px #e6e5e5 solid;
+  @wm-left-panel-border-color: #CFDBE2;
+  @wm-left-panel-link-color: @text-color;
+  @wm-left-panel-link-hover-bg: #3A3532;
+  @wm-left-panel-link-hover-text-color: #FFF;
+  @wm-left-panel-link-hover-border-color: @link-color;
+  @wm-left-panel-dropdown-menu-bg: transparent;
+
+//right panel
+  @wm-right-panel-border-color: #CFDBE2;
+  @wm-right-panel-bg: #F5F6EA;
+  @wm-right-panel-link-color: @text-color;
+  @wm-right-panel-list-border: 1px #e6e5e5 solid;
+
+  //Footer
+  @wm-footer-border-color: #F5F7FA;
+  @wm-footer-text-color: @text-color;
+  @wm-footer-bg-color: #F5F7FA;
+  @wm-footer-height: auto;
+
+  //Table
+  @table-header-bg: #fff;
+
+  //Tabset
+  @nav-tabs-color-hover : @brand-primary;
+  @nav-tabs-bg: #EDEDED;
+
+  //input group hover
+  @input-group-addon-hover-bg: #e7e7e7;
+
+  //Buttons
+  @btn-group-active-btn-bg: #fff;
+
+  //modal dialogs
+  @modal-header-bg: #998F89;
+  @modal-header-color: #fff;
+  @modal-header-border-color: #7B706A;
+
+  //Calendar
+  @wm-calendar-header-color: #adadad;
+  @wm-calendar-text-color: #adadad;
+  @wm-datepicker-header-bg: #eee;
+  @wm-calendar-active-bg: #3A3532;
+
+  .img-rounded {
+    border-radius: @thumbnail-border-radius;
+  }
+  /******Label: overiding the label class as bootstrap is making all the labels bold***/
+  label {
+    font-weight: normal;
+  }
+
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    width: 100%;
+  }
+
+  //stylings for tile widget
+  .app-tile {
+    &.bg-danger, &.bg-success, &.bg-info, &.bg-warning {
+      color: @panel-primary-text;
+    }
+  }
+
+  /***Tabs Widget: Styling for the tabs widget comes here********/
+  //Tab Content
+  .tab-content {
+    Ignore: ~"a;height: -webkit-calc(100% - 28px)";
+    Ignore: ~"a;height: -moz-calc(100% - 28px)";
+    Ignore: ~"a;@height: -ms-calc(100% - 28px)";
+    Ignore: ~"a;@height: -o-calc(100% - 28px)";
+    Ignore: ~"a;@height: calc(100% - 28px)";
+    .tab-body {
+      border-color: @nav-tabs-border-color;
+      padding: 1.333em;
+    }
+  }
+  //navigation
+  .nav-tabs {
+    > li {
+      > a {
+        color: @text-color;
+        background-color: @nav-tabs-bg;
+        border-color: @nav-tabs-border-color;
+        border-radius: @border-radius-base @border-radius-base 0 0;
+        box-shadow: none;
+        margin-right: 1em;
+        text-transform: uppercase;
+        &:hover, &:focus, &:active {
+          color: @nav-tabs-color-hover;
+          background-color: @nav-tabs-active-link-hover-bg;
+          border-color: @nav-tabs-border-color @nav-tabs-border-color transparent @nav-tabs-border-color;
+        }
+      }
+      &.active {
+        > a {
+          border-color: @nav-tabs-border-color @nav-tabs-border-color transparent @nav-tabs-border-color;
+          color: @text-color;
+          background-color: @nav-tabs-active-link-hover-bg;
+          &:hover, &:focus, &:active {
+            border-color: @nav-tabs-border-color @nav-tabs-border-color transparent @nav-tabs-border-color;
+            color: @nav-tabs-color-hover;
+            background-color: @nav-tabs-active-link-hover-bg;
+          }
+        }
+      }
+      //Default styles for menu in nav
+      &.app-nav-item > .dropdown > a.dropdown-toggle {
+        padding: @nav-link-padding;
+        color: @text-color;
+        background-color: @nav-tabs-bg;
+        text-transform: uppercase;
+        border-radius: @border-radius-base @border-radius-base 0 0;
+        border: 1px solid @nav-tabs-border-color;
+        line-height: 1.42857143;
+      }
+    }
+  }
+/***Tabs Widget: Styling for the tabs widget comes here********/
+  .list-group-item-separator {
+    margin-bottom: 0.16em;
+    border-radius: 0.16em;
+    .form-group {
+      padding: 0 1em;
+    }
+  }
+
+  //form styles
+  .form-group {
+    &.live-field.active {
+      .control-label {
+        color: @brand-primary;
+      }
+    }
+    .text-danger, .control-label.text-danger {
+      color: @brand-danger;
+    }
+
+    .ng-touched.ng-invalid .form-control {
+      border-color: @brand-danger;
+    }
+  }
+  .input-group-addon.colorpicker-container:last-child {
+    border-left: 1px solid @input-border;
+  }
+  .checkbox , .radio {
+      padding: 0 @padding-base-horizontal;
+  }
+
+  //list with forms
+  .app-list, .app-livelist {
+    .app-list-item {
+       .app-form {
+          margin-bottom: 0;
+          box-shadow: none;
+          background-color: transparent;
+       }
+    }
+  }
+
+  //filter
+  .app-livefilter, .app-form {
+    .control-label, .app-label {
+      padding-left: 1em;
+    }
+    .panel-body {
+      padding: @padding-base-horizontal;
+    }
+  }
+
+  /***Button Style: Defining the sixe of the button for bootstrap classes********/
+  .btn {
+    text-transform: uppercase;
+    &.btn-lg {
+      font-size: 1.4em;
+    }
+    &.btn-xs {
+      padding: 0 0.5em;
+    }
+    .caret {
+      margin-left: 0.7em;
+    }
+    &.active, &:active {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
+  .modal-header {
+    background-color: @modal-header-bg;
+    border-bottom-color: @modal-header-border-color;
+    color: @modal-header-color;
+  }
+
+  //Breadcrumb
+  .breadcrumb {
+    li {
+      a {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  //Progress Bar
+  .progress {
+    border-radius: 0;
+    box-shadow: none;
+    height: 1.267em;
+    /****Progress circle***/
+    &.app-progress.circle {
+      path:last-of-type {
+        stroke: @brand-primary;
+      }
+      circle-progress {
+        svg path:last-of-type {
+          stroke: @brand-primary;
+        }
+      }
+      &.progress-circle-success {
+        svg path:last-of-type {
+          stroke: @brand-success;
+        }
+      }
+      &.progress-circle-info {
+          svg path:last-of-type {
+            stroke: @brand-info;
+          }
+      }
+      &.progress-circle-warning {
+          svg path:last-of-type {
+            stroke: @brand-warning;
+          }
+      }
+      &.progress-circle-danger {
+          svg path:last-of-type {
+            stroke: @brand-danger;
+          }
+      }
+    }
+  }
+
+  //Table
+  .table {
+    > thead {
+      > tr {
+        th {
+          text-transform: uppercase;
+          background-color: @table-header-bg;
+        }
+      }
+    }
+  }
+
+  /*****************************************************************************************************************************************/
+  /*********************************************************Layout**************************************************************************/
+  /*****************************************************************************************************************************************/
+  .app-content-column {
+    background-color: @body-bg;
+    padding: 1em;
+  }
+
+  //Header
+  .app-header, .app-mobile-header {
+    background-color: @wm-header-bg-color;
+    color: @wm-header-text-color;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+    border-color: transparent;
+    height: @wm-header-height;
+    a {
+      color: @wm-header-text-color;
+    }
+    .app-mobile-header {
+      background-color: @navbar-default-bg;
+      color: @navbar-default-color;
+      a {
+        color: @navbar-default-color;
+      }
+    }
+  }
+
+  //Popover wrapper styles in Navbar
+  .nav li > .app-popover-wrapper a {
+    padding: @nav-link-padding;
+    &:hover, &:focus {
+      background-color: @nav-link-hover-bg;
+    }
+  }
+  .nav-pills {
+    > li {
+      .app-popover-wrapper a {
+        border-radius: @border-radius-base;
+      }
+      &.active .app-popover-wrapper a {
+        color: @nav-pills-active-link-hover-color;
+        background-color: @nav-pills-active-link-hover-bg;
+        &:hover, &:focus {
+          color: @nav-pills-active-link-hover-color;
+          background-color: @nav-pills-active-link-hover-bg;
+        }
+      }
+    }
+  }
+
+  //Top Nav Bar
+  .app-navbar {
+    border-radius: 0;
+    border-color: transparent;
+    color: @navbar-default-color;
+    .navbar-nav {
+      li {
+        a {
+          font-size: 1em;
+          text-transform: uppercase;
+          font-weight: normal;
+          text-decoration: none;
+          word-spacing: .4em;
+          color: @navbar-default-link-color;
+          padding: 1em 1.2em;
+          &:hover, &:focus, &.active {
+            color: @navbar-default-link-hover-color;
+            background-color: @navbar-default-hover-bg;
+          }
+        }
+
+        > .dropdown .dropdown-menu, .app-popover-wrapper a {
+          line-height: @line-height-computed;
+        }
+        &.active .app-popover-wrapper a {
+          background-color: @navbar-default-link-active-bg;
+          color: @navbar-default-link-active-color;
+        }
+        > .dropdown .dropdown-menu {
+          margin: 0;
+          background-color: @navbar-default-bg;
+          a {
+            padding: .65em 1em;
+            &:hover {
+              background-color: @navbar-default-hover-bg;
+            }
+          }
+        }
+      }
+
+      .app-nav-item {
+        > .dropdown, .app-popover-wrapper {
+          a.dropdown-toggle, a {
+            padding: 1em 1.2em;
+            &:hover {
+              background-color: @navbar-default-hover-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Popover
+  .popover {
+    min-width: 16.667em;
+    .popover-content {
+      padding: 0;
+    }
+  }
+
+  //Navbar
+  .navbar-default .navbar-nav {
+      > li {
+        .app-popover-wrapper a {
+            padding: 1em 1.2em;
+            color: @navbar-default-brand-color;
+            &:hover, &:focus, &:active {
+               color: @navbar-default-link-hover-color;
+               background-color: @navbar-default-link-hover-bg;
+            }
+        }
+        &.active {
+           .app-popover-wrapper a {
+               color: @navbar-default-link-active-color;
+               background-color: @navbar-default-link-hover-bg;
+               &:hover, &:focus, &:active {
+                 color: @navbar-default-link-active-color;
+                 background-color: @navbar-default-link-hover-bg;
+               }
+           }
+        }
+      }
+  }
+  .navbar-inverse .navbar-nav {
+      > li.active .app-popover-wrapper {
+         a, a:hover, a:focus, a:active {
+            color: @navbar-inverse-link-hover-color;
+            background-color: @navbar-inverse-link-active-bg;
+         }
+      }
+  }
+  //Nav pills
+  .nav, .nav-pills {
+      > li {
+         .app-popover-wrapper {
+            a {
+              padding: @nav-link-padding;
+            }
+            a:hover, a:focus {
+               color: @link-color;
+               background-color: @nav-link-hover-bg;
+            }
+         }
+         &.active {
+           .app-popover-wrapper {
+               a, a:hover, a:focus {
+                  color: @nav-tabs-active-link-hover-bg;
+                  background-color: @brand-primary;
+               }
+           }
+
+         }
+      }
+  }
+
+  .navbar-inverse .navbar-nav {
+    > li.active .app-popover-wrapper {
+      a, a:hover, a:focus, a:active {
+        color: @navbar-inverse-link-hover-color;
+        background-color: @navbar-inverse-link-active-bg;
+      }
+    }
+  }
+  .navbar-brand {
+    padding: .7em;
+  }
+
+  /****nav widget****/
+  .app-nav {
+    &.nav-pills {
+      .app-nav-item {
+        .app-menu {
+          .dropdown-toggle {
+            padding: @nav-link-padding;
+            &:hover {
+              color: @link-color;
+              background-color: @nav-link-hover-bg;
+            }
+          }
+          &.open {
+            .dropdown-toggle {
+              color: @link-color;
+              background-color: @nav-pills-active-link-hover-bg;
+              &:active, &:active:hover {
+                color: @link-color;
+                background-color: @nav-pills-active-link-hover-bg;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.nav-justified {
+      .app-nav-item {
+        .app-menu {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  //Left & Right Panels
+  .app-left-panel, .app-right-panel {
+    .nav, .app-nav.nav-pills {
+      li {
+        margin-top: 0;
+        border-bottom: @wm-left-panel-list-border;
+        //for overriding the pills default color
+        &.active {
+          > a, .app-popover-wrapper a {
+            color: @wm-left-panel-link-hover-text-color;
+            background-color: @wm-left-panel-link-hover-bg;
+            &:hover, &:focus {
+              color: @wm-left-panel-link-hover-text-color;
+              background-color: @wm-left-panel-link-hover-bg;
+            }
+          }
+        }
+
+        a, .btn, .dropdown a, .app-menu .dropdown-toggle, .app-popover-wrapper a {
+          font-size: 0.917em;
+          text-transform: uppercase;
+          letter-spacing: .025em;
+          font-weight: 400;
+          padding: .8em 2em .8em 0;
+          position: relative;
+          border-radius: 0;
+          line-height: 1.7;
+          color: @wm-left-panel-link-color;
+          border-left: 0.5em solid transparent;
+          transition: color .5s ease, background .5s ease;
+          -webkit-transition: color .5s ease, background .5s ease;
+          -moz-transition: color .5s ease, background .5s ease;
+          -ms-transition: color .5s ease, background .5s ease;
+          -o-transition: color .5s ease, background .5s ease;
+          &:hover {
+            color: @wm-left-panel-link-hover-text-color;
+            text-decoration: none;
+            background-color: @wm-left-panel-link-hover-bg;
+            border-left-color: @wm-left-panel-link-hover-border-color;
+            transition: color .5s ease, background .5s ease;
+            -webkit-transition: color .5s ease, background .5s ease;
+            -moz-transition: color .5s ease, background .5s ease;
+            -ms-transition: color .5s ease, background .5s ease;
+            -o-transition: color .5s ease, background .5s ease;
+          }
+          &.active {
+            background-color: @wm-left-panel-link-hover-bg;
+            border-left-color: @wm-left-panel-link-hover-border-color;
+            color: @wm-left-panel-link-hover-text-color;
+          }
+        }
+
+        .app-icon {
+            margin-left: 0.833em;
+            margin-right: 0.417em;
+        }
+
+        > .dropdown.open {
+          > .dropdown-menu {
+            position: relative;
+            padding: 0;
+            margin: 0 0 0.688em;
+            border: 0;
+            border-bottom: 0;
+            box-shadow: none;
+            background-color: @wm-left-panel-dropdown-menu-bg;
+            li {
+              a {
+                padding: 0.796em 1.667em;
+              }
+            }
+          }
+        }
+        .app-menu.open {
+          .dropdown-toggle {
+            background-color: @wm-left-panel-link-hover-bg;
+            color: @wm-left-panel-link-hover-text-color;
+          }
+         }
+      }
+    }
+    .app-nav {
+      .app-nav-item {
+        > .dropdown {
+          > a {
+            padding: 1.333em;
+          }
+        }
+      }
+    }
+  }
+
+  //Left Panel
+  .app-left-panel {
+    background-color: @wm-left-panel-bg;
+    border-right: 1px solid @wm-left-panel-border-color;
+  }
+
+  //Right Panel
+  .app-right-panel {
+    background-color: @wm-right-panel-bg;
+    border-left: 1px solid @wm-right-panel-border-color;
+    .nav {
+       li {
+          a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+            &:hover, &.active {
+              border-left-color: transparent;
+            }
+          }
+       }
+    }
+  }
+
+  //Footer
+  .app-footer {
+    padding: 1em 1.5em;
+    background-color: @wm-footer-bg-color;
+    color: @wm-footer-text-color;
+    border-color: @wm-footer-border-color;
+    height: @wm-footer-height;
+  }
+
+  .btn-group {
+    .btn.active {
+      box-shadow: none;
+      background-color: @btn-group-active-btn-bg;
+      border-color: @brand-primary;
+      color: @text-color;
+    }
+  }
+
+  /******************************************************************************************************************************************/
+  /***************************************************Widgets styling************************************************************************/
+  /******************************************************************************************************************************************/
+  .form-group {
+    margin-bottom: 0.833em;
+  }
+  //for text, select controls
+  .form-control {
+    box-shadow: none;
+    &:focus {
+      border: 1px solid @input-border-focus;
+      box-shadow: none;
+    }
+  }
+  .form-control-static {
+    padding-bottom: 0;
+  }
+
+  .model-holder[bsdatepicker] {
+    min-height: @input-height-base;
+  }
+  //form widgets
+  .app-form, .app-liveform {
+    //for labels in the form
+    .control-label {
+      padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
+    }
+    //action buttons in the form
+    .form-action {
+      .btn {
+        border-radius: @border-radius-base;
+      }
+    }
+
+    //Styling File Upload in IE
+    input[type="file"] {
+      padding: 0;
+      //Browse textbox
+      &::-ms-value {
+        border: 1px solid @input-border;
+        background-color: @input-bg;
+      }
+
+      //Browse button
+      &::-ms-browse {
+        border: 1px solid @input-border;
+      }
+    }
+  }
+
+  /***search widget****/
+  .app-search {
+    .input-group-addon {
+      &:hover {
+        background: @input-group-addon-hover-bg;
+      }
+    }
+  }
+  /******grid styles*******/
+  .app-grid {
+    .table {
+      thead {
+        th {
+          .header-data {
+            font-size: 0.917em;
+          }
+          .sort-buttons-container {
+            .sort-button {
+              .up {
+                border-width: 0 0.333em 0.333em;
+                bottom: -0.167em;
+              }
+              .down {
+                border-width: 0.333em 0.333em 0;
+                top: 0.250em;
+              }
+            }
+          }
+        }
+      }
+    }
+    //When table is condensed
+    .input-group.input-group-sm {
+      .input-group-addon {
+        padding: 0 4px;
+        .btn {
+          .app-icon {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+    > .panel-footer {
+       .app-datagrid-paginator {
+          .app-datanavigator a:focus {
+            box-shadow: inset 0px 0px 0px 1px @brand-primary;
+          }
+       }
+    }
+  }
+  //carousel styling: removing the left and right background image
+  .carousel-control {
+    &.left, &.right {
+      background-image: none;
+    }
+  }
+
+/****accordion classes****/
+  .app-accordion {
+    .app-accordion-panel {
+      .panel-heading {
+        .panel-actions {
+           top: .7em;
+        }
+      }
+    }
+  }
+/***wizard styles***/
+  .app-wizard {
+    .app-wizard-steps {
+        .app-wizard-step:not(:last-child) {
+           &.active .arrow {
+             border-color: rgba(255, 255, 255, 0.3);
+           }
+        }
+    }
+  }
+
+
+
+  //file upload button
+  .app-single-file-upload {
+    .glyphicon {
+      margin-right: 0.500em;
+    }
+  }
+  /*** dropdown menu*****/
+  .dropdown-menu {
+    padding: 0;
+  }
+
+  /*Date, DateTime & Dropdown widgets*/
+  .app-calendar, .app-date, .app-datetime, .app-timeinput {
+     //setting the margin for the group button so that it shows up over the input
+    .input-group-btn:last-child {
+        > .btn, .btn-group {
+          margin-left: 0;
+        }
+    }
+    thead tr th {
+      button.btn-default {
+        width: 100%;
+        font-size: 1em;
+        background: @wm-datepicker-header-bg;
+        color: @btn-default-color;
+        border-color: transparent;
+        padding: 0.55em .83em;
+      }
+    }
+
+    tbody {
+      .btn-default, .btn {
+        background-color: @body-bg;
+        border-color: @gray-lighter;
+        color: @text-color;
+        width: auto;
+        box-shadow: none;
+        padding: 0.66em;
+        &.btn-info {
+          background-color: lighten(@brand-primary, 30%);
+          color: @text-color;
+        }
+        &:hover {
+          background-color: @component-active-bg;
+          border-color: @component-active-bg;
+          color: @component-active-color;
+          .text-info {
+            color: inherit;
+          }
+        }
+        .text-info {
+          color: @brand-primary;
+          font-weight: bold;
+        }
+      }
+      td {
+        &.week {
+            span {
+               color: @brand-primary;
+               &:hover {
+                 background-color: transparent;
+                 color: @brand-primary;
+               }
+            }
+        }
+        span {
+            &.text-info {
+              color: @brand-primary;
+              font-weight: bold;
+            }
+            &.selected {
+              background-color: lighten(@brand-primary, 30%);
+              color: @component-active-color;
+            }
+            &:hover {
+              background-color: @component-active-bg;
+              border-color: @component-active-bg;
+              color: @component-active-color;
+            }
+            &.disabled, &.is-other-month {
+              &:hover {
+                color: rgba(0, 0, 0, 0.25);
+                background-color: rgba(168,168,168,0.05);
+              }
+            }
+        }
+      }
+    }
+    small {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+  //styling for the popup calendar actions
+  .bs-datepicker {
+    border: 1px solid @input-border;
+    .bs-datepicker-head {
+      background: @btn-default-bg;
+      color: @btn-default-color;
+        }
+    .bs-datepicker-body {
+      padding: 0;
+      border: none;
+    }
+    table td.is-highlighted:not(.disabled):not(.selected) span {
+      background-color: @component-active-bg;
+      border-color: @component-active-bg;
+      color: @component-active-color;
+      &.text-info {
+        color: inherit;
+      }
+    }
+  }
+
+  //Time Widget classes for styling the buttons
+  .app-timeinput, .app-datetime {
+    tbody {
+      .btn:not(.btn-link) {
+          border: 1px solid @input-border;
+      }
+      .btn-link {
+        width: 100%;
+        background-color: transparent;
+        &:hover {
+          background-color: @btn-primary-bg;
+          color: @btn-primary-color;
+        }
+        span:hover {
+          border-color: @component-active-color;
+        }
+      }
+    }
+  }
+
+  //Calendar Specific
+  .app-calendar {
+    background-color: @body-bg;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+    .well.well-sm {
+      background-color: @body-bg;
+      padding: 0;
+      margin: 0;
+      button {
+        border: none;
+      }
+    }
+    .fc {
+      .fc-state-default {
+        background: @btn-default-bg;
+        border: 1px solid @btn-default-border;
+        color: @btn-default-color;
+        text-shadow: none;
+        &.fc-state-hover, &:focus, &.fc-state-active {
+          color: @component-active-color;
+          background: @wm-calendar-active-bg;
+          border: 1px solid @wm-calendar-active-bg;
+        }
+      }
+    }
+    .fc {
+      .fc-toolbar {
+        padding: 1.82em;
+        margin-bottom: 0;
+        background-color: @component-active-bg;
+        h2 {
+          color: @component-active-color;
+        }
+      }
+    }
+    .fc-widget-header {
+      background-color: @body-bg;
+      color: @text-color;
+    }
+    .fc-body {
+      .fc-row {
+        min-height: 5em;
+      }
+    }
+    .fc-day-number {
+      padding: .5em .3em;
+      color: @wm-calendar-text-color;
+      font-size: 1.52em;
+      text-align: left;
+    }
+  }
+/*********************************************************************************************************************************************/
+/****************************************************Advanced editors******************************************************************************/
+/*********************************************************************************************************************************************/
+/******rich-editor class*******/
+  .app-richtexteditor {
+    .btn-default {
+      background-color: @gray-lighter;
+      border-color: @gray-light;
+      color: @text-color;
+      &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus,
+      &.disabled.focus, &.focus[disabled], &.disabled:active, &[disabled]:active, &.disabled.active, &.active[disabled],
+      &.disabled.active, &.active[disabled] {
+        background-color: @gray-lighter;
+        color: @text-color;
+      }
+      &:focus, &.active , &:active:hover  {
+        background-color: @component-active-bg;
+        color: @component-active-color;
+        border-color: @component-active-bg;
+      }
+    }
+
+    .ta-root .ta-toolbar .btn-group .btn {
+      height: 3em;
+      padding: 1em;
+    }
+  }
+
+  fieldset[disabled] {
+    .app-richtexteditor {
+      .btn-default, .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+        background-color: @gray-lighter;
+        color: @text-color;
+      }
+    }
+  }
+
+  //Tree
+  .app-tree {
+    ul {
+      li {
+        span {
+          &:hover {
+            color: @text-color;
+          }
+        }
+        &.selected {
+          > i, > span {
+            color: @brand-primary;
+          }
+        }
+      }
+    }
+  }
+
+/***color picker class: adding the default size and padding to the addon*******/
+  .app-colorpicker {
+    &.input-group {
+      width: 13em;
+    }
+  }
+/***popover class: removing the radius*******/
+  .popover {
+    border-radius: @border-radius-base;
+    padding: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    color: @text-color;
+  }
+
+  .app-fileupload .app-multi-file-upload, .app-fileupload .app-single-file-upload {
+    height: auto;
+    min-height: 3em;
+  }
+
+  .app-files-upload-status {
+    padding-top: 0.833em;
+    &.multiple {
+      padding-top: 0.333em;
+      font-size: 1.2em;
+    }
+  }
+
+  /***Slider widget styling*******************/
+  input[type='range'] {
+     color: @brand-primary;
+  }
+}

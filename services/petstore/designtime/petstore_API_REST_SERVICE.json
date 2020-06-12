@@ -1,0 +1,926 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
+    "version" : "1.0.5",
+    "title" : "Swagger Petstore",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "email" : "apiteam@swagger.io"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-SERVICE_ID" : "petstore",
+    "x-WM-SERVICE_TYPE" : "OpenAPIService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "host" : "petstore.swagger.io",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "pet",
+    "description" : "Everything about your Pets",
+    "externalDocs" : {
+      "description" : "Find out more",
+      "url" : "http://swagger.io"
+    },
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.pet"
+  }, {
+    "name" : "store",
+    "description" : "Access to Petstore orders",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.store"
+  }, {
+    "name" : "user",
+    "description" : "Operations about user",
+    "externalDocs" : {
+      "description" : "Find out more about our store",
+      "url" : "http://swagger.io"
+    },
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.user"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/petstore/pet" : {
+      "post" : {
+        "tags" : [ "pet" ],
+        "summary" : "Add a new pet to the store",
+        "operationId" : "petstore_addPet",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Pet object that needs to be added to the store",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Pet"
+          }
+        } ],
+        "responses" : {
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_addPet",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet",
+        "x-WM-OPERATION_TYPE" : "create"
+      },
+      "put" : {
+        "tags" : [ "pet" ],
+        "summary" : "Update an existing pet",
+        "operationId" : "petstore_updatePet",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Pet object that needs to be added to the store",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Pet"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Pet not found"
+          },
+          "405" : {
+            "description" : "Validation exception"
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_updatePet",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet",
+        "x-WM-OPERATION_TYPE" : "update"
+      },
+      "x-WM-BASE_PATH" : "/petstore/pet",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/pet"
+    },
+    "/petstore/pet/findByStatus" : {
+      "get" : {
+        "tags" : [ "pet" ],
+        "summary" : "Finds Pets by status",
+        "description" : "Multiple status values can be provided with comma separated strings",
+        "operationId" : "petstore_findPetsByStatus",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "status",
+          "in" : "query",
+          "description" : "Status values that need to be considered for filter",
+          "required" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "available", "pending", "sold" ],
+            "default" : "available"
+          },
+          "collectionFormat" : "multi"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Pet"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid status value"
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_findPetsByStatus",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet",
+        "x-WM-OPERATION_TYPE" : "list"
+      },
+      "x-WM-BASE_PATH" : "/petstore/pet",
+      "x-WM-RELATIVE_PATH" : "/findByStatus",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/pet/findByStatus"
+    },
+    "/petstore/pet/findByTags" : {
+      "get" : {
+        "tags" : [ "pet" ],
+        "summary" : "Finds Pets by tags",
+        "description" : "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+        "operationId" : "petstore_findPetsByTags",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "tags",
+          "in" : "query",
+          "description" : "Tags to filter by",
+          "required" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Pet"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid tag value"
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "deprecated" : true,
+        "x-WM-METHOD_NAME" : "petstore_findPetsByTags",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet"
+      },
+      "x-WM-BASE_PATH" : "/petstore/pet",
+      "x-WM-RELATIVE_PATH" : "/findByTags",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/pet/findByTags"
+    },
+    "/petstore/pet/{petId}" : {
+      "get" : {
+        "tags" : [ "pet" ],
+        "summary" : "Find pet by ID",
+        "description" : "Returns a single pet",
+        "operationId" : "petstore_getPetById",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "petId",
+          "in" : "path",
+          "description" : "ID of pet to return",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Pet"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Pet not found"
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_getPetById",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet"
+      },
+      "post" : {
+        "tags" : [ "pet" ],
+        "summary" : "Updates a pet in the store with form data",
+        "operationId" : "petstore_updatePetWithForm",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "petId",
+          "in" : "path",
+          "description" : "ID of pet that needs to be updated",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "name",
+          "in" : "formData",
+          "description" : "Updated name of the pet",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "status",
+          "in" : "formData",
+          "description" : "Updated status of the pet",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_updatePetWithForm",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet"
+      },
+      "delete" : {
+        "tags" : [ "pet" ],
+        "summary" : "Deletes a pet",
+        "operationId" : "petstore_deletePet",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "api_key",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "petId",
+          "in" : "path",
+          "description" : "Pet id to delete",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Pet not found"
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_deletePet",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet",
+        "x-WM-OPERATION_TYPE" : "delete"
+      },
+      "x-WM-BASE_PATH" : "/petstore/pet",
+      "x-WM-RELATIVE_PATH" : "/{petId}",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/pet/{petId}"
+    },
+    "/petstore/pet/{petId}/uploadImage" : {
+      "post" : {
+        "tags" : [ "pet" ],
+        "summary" : "uploads an image",
+        "operationId" : "petstore_uploadFile",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "petId",
+          "in" : "path",
+          "description" : "ID of pet to update",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "additionalMetadata",
+          "in" : "formData",
+          "description" : "Additional data to pass to server",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file to upload",
+          "required" : false,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ApiResponse"
+            }
+          }
+        },
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_uploadFile",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.pet"
+      },
+      "x-WM-BASE_PATH" : "/petstore/pet",
+      "x-WM-RELATIVE_PATH" : "/{petId}/uploadImage",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/pet/{petId}/uploadImage"
+    },
+    "/petstore/store/inventory" : {
+      "get" : {
+        "tags" : [ "store" ],
+        "summary" : "Returns pet inventories by status",
+        "description" : "Returns a map of status codes to quantities",
+        "operationId" : "petstore_getInventory",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "object",
+              "additionalProperties" : {
+                "type" : "integer",
+                "format" : "int32"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "petstore_getInventory",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.store"
+      },
+      "x-WM-BASE_PATH" : "/petstore/store",
+      "x-WM-RELATIVE_PATH" : "/inventory",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/store/inventory"
+    },
+    "/petstore/store/order" : {
+      "post" : {
+        "tags" : [ "store" ],
+        "summary" : "Place an order for a pet",
+        "operationId" : "petstore_placeOrder",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "order placed for purchasing the pet",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Order"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Order"
+            }
+          },
+          "400" : {
+            "description" : "Invalid Order"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_placeOrder",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.store",
+        "x-WM-OPERATION_TYPE" : "create"
+      },
+      "x-WM-BASE_PATH" : "/petstore/store",
+      "x-WM-RELATIVE_PATH" : "/order",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/store/order"
+    },
+    "/petstore/store/order/{orderId}" : {
+      "get" : {
+        "tags" : [ "store" ],
+        "summary" : "Find purchase order by ID",
+        "description" : "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+        "operationId" : "petstore_getOrderById",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of pet that needs to be fetched",
+          "required" : true,
+          "type" : "integer",
+          "maximum" : 10.0,
+          "minimum" : 1.0,
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Order"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Order not found"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_getOrderById",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.store"
+      },
+      "delete" : {
+        "tags" : [ "store" ],
+        "summary" : "Delete purchase order by ID",
+        "description" : "For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors",
+        "operationId" : "petstore_deleteOrder",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that needs to be deleted",
+          "required" : true,
+          "type" : "integer",
+          "minimum" : 1.0,
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Order not found"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_deleteOrder",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.store",
+        "x-WM-OPERATION_TYPE" : "delete"
+      },
+      "x-WM-BASE_PATH" : "/petstore/store",
+      "x-WM-RELATIVE_PATH" : "/order/{orderId}",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/store/order/{orderId}"
+    },
+    "/petstore/user" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Create user",
+        "description" : "This can only be done by the logged in user.",
+        "operationId" : "petstore_createUser",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Created user object",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_createUser",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user",
+        "x-WM-OPERATION_TYPE" : "create"
+      },
+      "x-WM-BASE_PATH" : "/petstore/user",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/user"
+    },
+    "/petstore/user/createWithArray" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Creates list of users with given input array",
+        "operationId" : "petstore_createUsersWithArrayInput",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "List of user object",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_createUsersWithArrayInput",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user"
+      },
+      "x-WM-BASE_PATH" : "/petstore/user",
+      "x-WM-RELATIVE_PATH" : "/createWithArray",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/user/createWithArray"
+    },
+    "/petstore/user/createWithList" : {
+      "post" : {
+        "tags" : [ "user" ],
+        "summary" : "Creates list of users with given input array",
+        "operationId" : "petstore_createUsersWithListInput",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "List of user object",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_createUsersWithListInput",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user"
+      },
+      "x-WM-BASE_PATH" : "/petstore/user",
+      "x-WM-RELATIVE_PATH" : "/createWithList",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/user/createWithList"
+    },
+    "/petstore/user/login" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Logs user into the system",
+        "operationId" : "petstore_loginUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "query",
+          "description" : "The user name for login",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "description" : "The password for login in clear text",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : {
+              "X-Expires-After" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "date in UTC when token expires"
+              },
+              "X-Rate-Limit" : {
+                "type" : "integer",
+                "format" : "int32",
+                "description" : "calls per hour allowed by the user"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid username/password supplied"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_loginUser",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user"
+      },
+      "x-WM-BASE_PATH" : "/petstore/user",
+      "x-WM-RELATIVE_PATH" : "/login",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/user/login"
+    },
+    "/petstore/user/logout" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Logs out current logged in user session",
+        "operationId" : "petstore_logoutUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_logoutUser",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user"
+      },
+      "x-WM-BASE_PATH" : "/petstore/user",
+      "x-WM-RELATIVE_PATH" : "/logout",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/user/logout"
+    },
+    "/petstore/user/{username}" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Get user by user name",
+        "operationId" : "petstore_getUserByName",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "path",
+          "description" : "The name that needs to be fetched. Use user1 for testing. ",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "400" : {
+            "description" : "Invalid username supplied"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_getUserByName",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user"
+      },
+      "put" : {
+        "tags" : [ "user" ],
+        "summary" : "Updated user",
+        "description" : "This can only be done by the logged in user.",
+        "operationId" : "petstore_updateUser",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "path",
+          "description" : "name that need to be updated",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Updated user object",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "Invalid user supplied"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_updateUser",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user",
+        "x-WM-OPERATION_TYPE" : "update"
+      },
+      "delete" : {
+        "tags" : [ "user" ],
+        "summary" : "Delete user",
+        "description" : "This can only be done by the logged in user.",
+        "operationId" : "petstore_deleteUser",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "path",
+          "description" : "The name that needs to be deleted",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "Invalid username supplied"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        },
+        "x-WM-METHOD_NAME" : "petstore_deleteUser",
+        "x-WM-CRUD_OPERATION_ID" : "petstore.user",
+        "x-WM-OPERATION_TYPE" : "delete"
+      },
+      "x-WM-BASE_PATH" : "/petstore/user",
+      "x-WM-RELATIVE_PATH" : "/{username}",
+      "x-WM-COMPLETE_PATH" : "${petstore.scheme}://${petstore.host}${petstore.basepath}/user/{username}"
+    }
+  },
+  "securityDefinitions" : {
+    "api_key" : {
+      "type" : "apiKey",
+      "name" : "api_key",
+      "in" : "header",
+      "x-testValue" : null,
+      "x-value" : null
+    },
+    "petstore_auth" : {
+      "type" : "oauth2",
+      "authorizationUrl" : "https://petstore.swagger.io/oauth/authorize",
+      "flow" : "implicit",
+      "scopes" : {
+        "read:pets" : "read your pets",
+        "write:pets" : "modify pets in your account"
+      },
+      "x-WM-PROVIDER_ID" : "petstore_petstore_auth"
+    }
+  },
+  "definitions" : {
+    "ApiResponse" : {
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      },
+      "type" : "object",
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.ApiResponse"
+    },
+    "Category" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "type" : "object",
+      "xml" : {
+        "name" : "Category"
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.Category"
+    },
+    "Pet" : {
+      "required" : [ "name", "photoUrls" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "category" : {
+          "$ref" : "#/definitions/Category"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "photoUrls" : {
+          "type" : "array",
+          "xml" : {
+            "wrapped" : true
+          },
+          "items" : {
+            "type" : "string",
+            "xml" : {
+              "name" : "photoUrl"
+            }
+          }
+        },
+        "tags" : {
+          "type" : "array",
+          "xml" : {
+            "wrapped" : true
+          },
+          "items" : {
+            "xml" : {
+              "name" : "tag"
+            },
+            "$ref" : "#/definitions/Tag"
+          }
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "pet status in the store",
+          "enum" : [ "available", "pending", "sold" ]
+        }
+      },
+      "type" : "object",
+      "xml" : {
+        "name" : "Pet"
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.Pet"
+    },
+    "Tag" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "type" : "object",
+      "xml" : {
+        "name" : "Tag"
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.Tag"
+    },
+    "Order" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "petId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "quantity" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "shipDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Order Status",
+          "enum" : [ "placed", "approved", "delivered" ]
+        },
+        "complete" : {
+          "type" : "boolean"
+        }
+      },
+      "type" : "object",
+      "xml" : {
+        "name" : "Order"
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.Order"
+    },
+    "User" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "userStatus" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "User Status"
+        }
+      },
+      "type" : "object",
+      "xml" : {
+        "name" : "User"
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.customer_issues.petstore.User"
+    }
+  },
+  "externalDocs" : {
+    "description" : "Find out more about Swagger",
+    "url" : "http://swagger.io"
+  }
+}
